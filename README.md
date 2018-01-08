@@ -311,3 +311,7 @@ Not Applicable|Most software on my computer used only a single connection, thus 
 Not Applicable|The improvements are incremental but by comparing the initial solution, the first improvement and the final improvement, we can see that the system has come a long way.|The first 3 improvements were done on both hardware and software side, while the fourth and fifth improvements were done solely on the software side for convenience and to fully utilise the hardware.
 
 Fun fact: I configured my routers to use their LEDs to flash “JULIUS” in Morse code, which you can see in the videos attached. (JULIUS in Morse Code is .---/..-/.-../../..-/...)
+
+[![](https://img.youtube.com/vi/Ws8X4sh8bps/0.jpg)](https://www.youtube.com/watch?v=Ws8X4sh8bps)
+
+[![](https://img.youtube.com/vi/V9CS9wRP-wg/0.jpg)](https://www.youtube.com/watch?v=V9CS9wRP-wg)
