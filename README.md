@@ -26,25 +26,25 @@ After some time, having heard about powerline adapters previously, I devised a s
 
 The difficult part on getting my first Wi-Fi extender to work was to find which power point to plug my powerline adapter into such that I could get a good speed. After several attempts, I finally purchased a 10m RJ45 cable and connected the powerline adapter to a power point in the common area nearest to my room as it offers the best speed (about 20 Mbps as compared to speeds as low as 1.5Mbps from some power points).
 
-![]()
+![](img/3.2.jpg)
 
 **Figure 3.2** Powerline adapter on the common area. I rolled the unused cable for tidiness
 
-![]()
+![](img/3.3.jpg)
 
 **Figure 3.3** I used sellotape (Scotch Tape) to stick the cable to the wall and make sure the cable is not a tripping hazard
 
-![]()
+![](img/3.4.png)
 
 **Figure 3.4** Speed test result using iperf
 
 Using LuCI (OpenWRT html-based web interface), I set the network up. In the Wi-Fi receiver in the common area, I connected to the Wi-Fi and masqueraded the Wi-Fi interface to the WAN Ethernet interface as shown in Figure 3.5. In the Wi-Fi base station in my room, I masqueraded the incoming WAN interface into the Wi-Fi interface (just like what the usual Wi-Fi routers do) as shown in Figure 3.6.
 
-![]()
+![](img/3.5.png)
 
 **Figure 3.5** LuCI configuration on the Wi-Fi receiver in the common area
 
-![]()
+![](img/3.6.png)
 
 **Figure 3.6** LuCI configuration on the Wi-Fi router in my room
 
@@ -62,7 +62,7 @@ I shared my internet with my roommate, and I started to feel the deficiency of t
 
 I then made another plan to increase the reliability and speed of my Wi-Fi extender. While browsing the OpenWRT website, I found a package called mwan3 which can load-balance connections through several interfaces on different subnets. I thought of using several routers, each connected to the hostel Wi-Fi, and then those routers would be connected to one router which acts as a load-balancer. The system works as shown in Figure 5.1.
 
-![]()
+![](img/5.1.png)
 
 **Figure 5.1** Diagram of how second improvement of my system works
 
@@ -70,7 +70,7 @@ I bought a cheap router off Carousell (an online second-hand market in Singapore
 
 The system worked! One connection’s maximum speed is still 256 KB/s, but a maximum throughput of 512 KB/s can be achieved through multiple connections (such as the BitTorrent protocol or downloading using multiple streams through aria2). Reliability of the system also increased as now there are 2 Wi-Fi receivers that can communicate with the hostel Wi-Fi, so less traffic is dropped.
 
-```bash
+```
 config interface 'wan'
 option enabled '1'
 config interface 'wan2'
@@ -104,35 +104,35 @@ For my first compiled image, I had inadvertently forgot to include dropbear (whi
 
 With everything working properly, I then bought 2 more routers off Carousell, so in total I now have 4 routers. The system is still expandable as there is still one more unused Ethernet port on the load-balancer router. Moreover, I can also use the other Wi-Fi routers as load-balancers as well, then adjust the weights (how likely a connection is routed through certain interfaces) accordingly on the load-balancer routers as shown in Figure 6.1. This can be done because each Wi-Fi receiver is also a router.
 
-![]()
+![](img/6.1.png)
 
 **Figure 6.1** Expandability of the system
 
 The resulting maximum theoretical bandwidth to the internet is thus 1024 KB/s (Figure 6.2) – 256 KB/s multiplied by 4 routers. Moreover, I can achieve latency of around 100 ms (Figure 6.3), an improvement of almost 20 times the single-router configuration. I did a speed test using iperf to my DigitalOcean server to test the maximum throughput to the internet. Using one connection, I got 350 KB/s, but using 8 connections, I can get 974 KB/s (Figure 6.4).
 
-![]()
+![](img/6.2.png)
 
 **Figure 6.2** Achieving close to theoretical maximum throughput of 1024KB/s
 
-![]()
+![](img/6.3.png)
 
 **Figure 6.3** Achieving latency of around 100 ms
 
-![]()
+![](img/6.4.png)
 
 **Figure 6.4** A speed test using iperf to my DigitalOcean server, first with only 1 connection, and then using 8 connections
 
 The current configuration of the device is shown in Figures 6.5 to 6.7. In total, I spent S$30 for the routers and RJ45 cables, and S$20 for the pair of powerline adapters, for a total of S$50 (~US$36) for a system that I will use for 12 months (around US$3/month) which is rather cheap.
 
-![]()
+![](img/6.5.jpg)
 
 **Figure 6.5** A total of 4 routers are used in the common area, with one acting as load-balancer (the bottom router). Notice the one unused Ethernet port that can be used to expand the system. I used blu-tacks to stick the bottom router to the metal pole so that it will not fall down.
 
-![]()
+![](img/6.6.jpg)
 
 **Figure 6.6** The 3 black adapters are for my routers. So as not to use all power points available, to power my fourth router, I used a USB port from one router to power the mini-router through MicroUSB
 
-![]()
+![](img/6.7.jpg)
 
 **Figure 6.7** The powerline adapter and Wi-Fi router in my room
 
@@ -214,15 +214,13 @@ done
 
 **Figure 8.1** The script to check internet connectivity
 
-![]()
+![](img/8.2.png)
 
 **Figure 8.2** The output of the script when run
 
-![]()
+![](img/8.3.png)
 
 **Figure 8.3** The log of the script. Pictured here is the shutdown of internet connection every day from 1am to 5am
-
-![]()
 
 ### 9. Fifth Improvement: Maximising utilisation of the higher bandwidth
 
@@ -253,7 +251,7 @@ rsync Z500 1082@usw-s001.rsync.net:Lenovo/ -PavzhRy --delete-delay
 
 **Figure 9.1** The adapted rsync script – The directories synchronised is “Z500” in the local computer and “Lenovo” on the remote server.
 
-![]()
+![](img/9.2.png)
 
 **Figure 9.2** A sample output of this script
 
