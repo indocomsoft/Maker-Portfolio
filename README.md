@@ -303,7 +303,7 @@ Most software on my computer used only a single connection, thus speed is capped
 
 Initial Solution|First Improvement|Fifth Improvement
 ---|---|---
-Unusable internet – more than 90% package loss|Reliable internet when used for light internet browsing or bandwidth-intensive services by 1 device only.Reliable internet when used by multiple devices (tested with 7 devices)
+Unusable internet – more than 90% package loss|Reliable internet when used for light internet browsing or bandwidth-intensive services by 1 device only.|Reliable internet when used by multiple devices (tested with 7 devices)
 Maximum speed of 256 KB/s (but practical speed of under 16 KB/s due to high SNR)|Maximum speed of 256 KB/s|Maximum speed of 1024 KB/s
 Not Applicable|Under heavy bandwidth load, latency worsens to 2000 ms and package loss of up to 60%|Even under heavy bandwidth load, latency is maintained between 100-200 ms, and package loss is below 5%
 Not Applicable|No way of quickly checking whether any interface is down|Shell script constantly monitoring whether any interface is down
